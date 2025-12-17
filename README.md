@@ -39,18 +39,68 @@ The system allows you to load documents (PDFs), embed them, store the embeddings
 ```bash
 git clone <repo_url>
 cd <repo_folder>
-
+```
 2. **Create a Virtual Environment**
-python -m venv vsvenv
-source vsvenv/Scripts/activate  # Windows
+`python -m venv vsvenv`
+`source vsvenv/Scripts/activate`  # Windows
 # or
-source vsvenv/bin/activate      # Linux/Mac
+`source vsvenv/bin/activate`      # Linux/Mac
 
 3. **Install Dependencies**
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 4. **Create a .env file for API key**
-MODEL_API_KEY = <model_api_key>
+`MODEL_API_KEY = <model_api_key>`
 
 5. **Run the code and prompt the LLM**
-python rag.py
+`python rag.py` #run this command in the terminal to run the rag.py
+
+## **You will get this type of output to ask the question from LLM. You can also use Streamlit or Chainlit for interactive UI for conversation.**
+Interactive RAG (type 'exit' to quit)
+
+Enter your question: If a player uses all 7 tiles (1 blank tile and 6 others) in a single turn then how many points will he get? 
+
+Running RAG for your query…………………………………!
+
+Response: Based on the provided context:
+
+1. The player scores the **regular points** for the word formed by the 7 tiles (including the blank tile, which has no score value but contributes to the word).   
+2. If the word covers any **premium squares** (Double/Triple Letter or Word), those bonuses are applied **before** the 50-point bonus.
+3. After calculating the regular score (including premium squares), the player receives a **50-point bonus** for using all 7 tiles in a single turn.
+
+### Example Calculation:
+- Suppose the player plays a 7-letter word (e.g., "EXAMPLE") with:
+  - 1 blank tile (0 points) and 6 other tiles (e.g., E1, X8, A1, M3, P3, L1, E1).
+  - The word covers a **Double Word Score** square.
+- **Regular score**:
+  - Sum of letter values: 1 (E) + 8 (X) + 1 (A) + 3 (M) + 3 (P) + 1 (L) + 1 (E) = **18 points**.
+  - Double Word Score applies: 18 × 2 = **36 points**.
+- **50-point bonus**: Added after premiums → **36 + 50 = 86 points total**.
+
+### Final Answer:
+The player will receive:
+- The **regular score** for the word (including premium squares if applicable) **plus 50 points**.
+- The exact total depends on the word's letter values and premium squares, but the **50-point bonus is always added last**.
+
+### RAG Answer:
+Based on the provided context:
+
+1. The player scores the **regular points** for the word formed by the 7 tiles (including the blank tile, which has no score value but contributes to the word).   
+2. If the word covers any **premium squares** (Double/Triple Letter or Word), those bonuses are applied **before** the 50-point bonus.
+3. After calculating the regular score (including premium squares), the player receives a **50-point bonus** for using all 7 tiles in a single turn.
+
+### Example Calculation:
+- Suppose the player plays a 7-letter word (e.g., "EXAMPLE") with:
+  - 1 blank tile (0 points) and 6 other tiles (e.g., E1, X8, A1, M3, P3, L1, E1).
+  - The word covers a **Double Word Score** square.
+- **Regular score**:
+  - Sum of letter values: 1 (E) + 8 (X) + 1 (A) + 3 (M) + 3 (P) + 1 (L) + 1 (E) = **18 points**.
+  - Double Word Score applies: 18 × 2 = **36 points**.
+- **50-point bonus**: Added after premiums → **36 + 50 = 86 points total**.
+
+### Final Answer:
+The player will receive:
+- The **regular score** for the word (including premium squares if applicable) **plus 50 points**.
+- The exact total depends on the word's letter values and premium squares, but the **50-point bonus is always added last**.
+
+Do you want to evaluate this answer? (y/n):
