@@ -5,7 +5,7 @@ from get_embeddings import get_embedding_function
 from langchain_community.vectorstores import Chroma
 
 CHROMA_PATH = "chroma"
-DATA_PATH = "C:\\F\\ms_vs_code_files\\Dataset"
+DATA_PATH = "dataset" #folder path where the datasets are placed like C:\...\dataset
 
 def main(reset_db: bool = False):
     if reset_db:
@@ -79,4 +79,5 @@ def clear_database():
     print("Manually delete the 'chroma' folder to reset the DB.")
 
 if __name__ == "__main__":
+
     main(reset_db=False)
