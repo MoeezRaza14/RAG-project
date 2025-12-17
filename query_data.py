@@ -20,7 +20,6 @@ Answer the question based on the above context: {question}
 """
 
 def query_rag(query_text: str):
-    # ⚡️ Use the *existing* embedding instance
     db = Chroma(
         persist_directory=CHROMA_PATH,
         embedding_function=EMBEDDING_FN,
