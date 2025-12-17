@@ -47,13 +47,19 @@ source vsvenv/Scripts/activate # Windows
 ```
 
 3. **Install Dependencies**
-`pip install -r requirements.txt`
+```bash
+pip install -r requirements.txt
+```
 
-4. **Create a .env file for API key**
-`MODEL_API_KEY = <model_api_key>`
+5. **Create a .env file for API key**
+```bash
+MODEL_API_KEY = <model_api_key>
+```
 
-5. **Run the code and prompt the LLM**
-`python rag.py` #run this command in the terminal to run the rag.py
+6. **Run the code and prompt the LLM**
+```bash
+python rag.py #run this command in the terminal to run the rag.py
+```
 
 ## **You will get this type of output to ask the question from LLM. You can also use Streamlit or Chainlit for interactive UI for conversation.**
 Interactive RAG (type 'exit' to quit)
