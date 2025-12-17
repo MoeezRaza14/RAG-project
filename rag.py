@@ -15,7 +15,7 @@ def run_interactive_rag():
     while True:
         question = input("Enter your question: ").strip()
         if not question or question.lower() in ["exit", "quit"]:
-            print("Exiting. Goodbye! 👋")
+            print("Exiting. Goodbye!")
             break
 
         # Run the RAG system
@@ -32,30 +32,26 @@ def run_interactive_rag():
             else:
                 print("No expected answer entered — skipping evaluation.!!!!!!!!!\n")
         print("-" * 50 + "\n")
-
 def evaluate_answer(actual_response: str, expected_response: str):
     prompt = EVAL_PROMPT.format(
         expected_response=expected_response,
         actual_response=actual_response,
     )
-
     # Call Mistral API for evaluation
     client = Mistral(api_key=MISTRAL_API_KEY)
     eval_response = client.chat.complete(
         model="mistral-large-latest",
         messages=[{"role": "user", "content": prompt}],
     )
-
     evaluation = eval_response.choices[0].message.content.strip().lower()
     print(f"\nEvaluation Prompt:\n{prompt}\n")
     print("Mistral Evaluation Result: ", evaluation)
-
     if "true" in evaluation:
-        print("\033[92m✔️ The answer matches expected response.\033[0m\n")
+        print("\033[92m The answer matches expected response.\033[0m\n")
     elif "false" in evaluation:
-        print("\033[91m❌ The answer does NOT match expected response.\033[0m\n")
+        print("\033[91m The answer does NOT match expected response.\033[0m\n")
     else:
-        print("⚠️ Could not clearly determine true/false from evaluation.\n")
+        print("Could not clearly determine true/false from evaluation.\n")
 
 if __name__ == "__main__":
     run_interactive_rag()
