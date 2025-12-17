@@ -15,7 +15,7 @@ The system allows you to load documents (PDFs), embed them, store the embeddings
 
 | File | Description |
 |------|-------------|
-| `get_embeddings.py` | Returns the HuggingFace embeddings function (Qwen3). |
+| `get_embeddings.py` | Returns the HuggingFace embeddings function (Qwen3 0.6B embedding model). |
 | `populate_db.py` | Loads PDF documents, splits them into chunks, generates embeddings, and saves them to Chroma. |
 | `query_data.py` | Implements the RAG query pipeline using stored embeddings and Mistral API. |
 | `rag.py` | Interactive runtime for querying the RAG system and optionally evaluating answers. |
