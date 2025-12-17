@@ -43,9 +43,7 @@ cd <repo_folder>
 2. **Create a Virtual Environment**
 
 `python -m venv vsvenv`
-`source vsvenv/Scripts/activate`  # Windows
-### or
-`source vsvenv/bin/activate`      # Linux/Mac
+`source vsvenv/Scripts/activate # Windows`
 
 3. **Install Dependencies**
 `pip install -r requirements.txt`
