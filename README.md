@@ -64,7 +64,7 @@ python rag.py #run this command in the terminal to run the rag.py
 ## **You will get this type of output to ask the question from LLM. You can also use Streamlit or Chainlit for interactive UI for conversation.**
 Interactive RAG (type 'exit' to quit)
 
-Enter your question: If a player uses all 7 tiles (1 blank tile and 6 others) in a single turn then how many points will he get? 
+Enter your question: If a player uses all 7 tiles (1 blank tile and 6 others) in a single turn then how many points will he get? #this is an example question. 
 
 Running RAG for your query…………………………………!
 
