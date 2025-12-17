@@ -41,9 +41,10 @@ git clone <repo_url>
 cd <repo_folder>
 ```
 2. **Create a Virtual Environment**
+
 `python -m venv vsvenv`
 `source vsvenv/Scripts/activate`  # Windows
-# or
+### or
 `source vsvenv/bin/activate`      # Linux/Mac
 
 3. **Install Dependencies**
